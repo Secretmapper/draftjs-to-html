@@ -243,9 +243,9 @@ export function sameStyleAsPrevious(
 */
 export function addInlineStyleMarkup(style, content) {
   if (style === 'BOLD') {
-    return `<strong>${content}</strong>`;
+    return `<b>${content}</b>`;
   } if (style === 'ITALIC') {
-    return `<em>${content}</em>`;
+    return `<i>${content}</i>`;
   } if (style === 'UNDERLINE') {
     return `<ins>${content}</ins>`;
   } if (style === 'STRIKETHROUGH') {
@@ -268,7 +268,7 @@ function getSectionText(text) {
     const chars = text.map((ch) => {
       switch (ch) {
         case '\n':
-          return '<br>';
+          return '';
         case '&':
           return '&amp;';
         case '<':
@@ -532,6 +532,6 @@ export function getBlockMarkup(
       blockHtml.push(`</${blockTag}>`);
     }
   }
-  blockHtml.push('\n');
+  blockHtml.push('');
   return blockHtml.join('');
 }

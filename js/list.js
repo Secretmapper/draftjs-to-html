@@ -30,10 +30,10 @@ export function getListMarkup(
   listBlocks.forEach((block) => {
     let nestedBlock = false;
     if (!previousBlock) {
-      listHtml.push(`<${getBlockTag(block.type)}>\n`);
+      listHtml.push(`<${getBlockTag(block.type)}>`);
     } else if (previousBlock.type !== block.type) {
-      listHtml.push(`</${getBlockTag(previousBlock.type)}>\n`);
-      listHtml.push(`<${getBlockTag(block.type)}>\n`);
+      listHtml.push(`</${getBlockTag(previousBlock.type)}>`);
+      listHtml.push(`<${getBlockTag(block.type)}>`);
     } else if (previousBlock.depth === block.depth) {
       if (nestedListBlock && nestedListBlock.length > 0) {
         listHtml.push(getListMarkup(
@@ -65,7 +65,7 @@ export function getListMarkup(
         hashtagConfig,
         customEntityTransform,
       ));
-      listHtml.push('</li>\n');
+      listHtml.push('</li>');
       previousBlock = block;
     }
   });
@@ -78,6 +78,6 @@ export function getListMarkup(
       customEntityTransform,
     ));
   }
-  listHtml.push(`</${getBlockTag(previousBlock.type)}>\n`);
+  listHtml.push(`</${getBlockTag(previousBlock.type)}>`);
   return listHtml.join('');
 }
