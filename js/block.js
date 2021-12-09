@@ -249,7 +249,7 @@ export function addInlineStyleMarkup(style, content) {
   } if (style === 'UNDERLINE') {
     return `<ins>${content}</ins>`;
   } if (style === 'STRIKETHROUGH') {
-    return `<del>${content}</del>`;
+    return `<s>${content}</s>`;
   } if (style === 'CODE') {
     return `<code>${content}</code>`;
   } if (style === 'SUPERSCRIPT') {
